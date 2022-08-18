@@ -13,7 +13,6 @@ pipeline {
             steps {
                 dir("/var/lib/jenkins/workspace/Java-Project1/jenkins-plugin/") {
                 sh 'mvn -B -DskipTests clean package'
-                sh "fuser -k 8083/tcp"
                 }
             }
         }
