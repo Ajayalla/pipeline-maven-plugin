@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("clone code") {
             steps {
-                git credentialsId: 'githublogin', branch: 'master', url: 'https://github.com/kathirGopal/Fisker-GatewayService.git'
+                git credentialsId: 'githublogin', branch: 'master', url: 'https://github.com/Ajayalla/pipeline-maven-plugin.git'
             }
         }
         stage("build code") {
