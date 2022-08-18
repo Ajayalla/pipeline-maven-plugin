@@ -11,7 +11,7 @@ pipeline {
         }
         stage("build code") {
             steps {
-                sh "mvn clean build"
+                dir("/var/lib/jenkins/workspace/New_demo/my-app/") {
                 sh "fuser -k 8083/tcp"
                 sh "/var/lib/jenkins/workspace/Java-Project1/my-app/target/"
                 sh "nohup java -jar gateway-0.0.1-SNAPSHOT.jar &"
