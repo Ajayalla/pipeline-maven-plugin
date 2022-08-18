@@ -12,9 +12,9 @@ pipeline {
         stage("build code") {
             steps {
                 dir("/var/lib/jenkins/workspace/New_demo/my-app/") {
+                sh 'mvn -B -DskipTests clean package'
+                }
                 sh "fuser -k 8083/tcp"
-                sh "/var/lib/jenkins/workspace/Java-Project1/my-app/target/"
-                sh "nohup java -jar gateway-0.0.1-SNAPSHOT.jar &"
                // sh "mvn package -Dmaven.test.skip=true"
             }
         }
